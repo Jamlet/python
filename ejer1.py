@@ -1,6 +1,4 @@
-x=100
+﻿num1 = input("Año nacimiento: ")
+num2 = input("Año actual: ")
 
-if x <= 100:
-	print 'menor o igual'
-else:
-	print 'mayor'
+print("Tu edad es: " + str(num2 - num1))
