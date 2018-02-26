@@ -24,7 +24,7 @@ def limpiar():
 def gordos(dir,size):
 	archivos = os.listdir(dir)
 	size_final = int(size[:-1])
-	tipo = int({'K':1,'M':2,'G':3}[size[-1:]])o
+	tipo = int({'K':1,'M':2,'G':3}[size[-1:]])
 	while tipo - 1 > 0:
 		size_final *= 1024
 		tipo -= 1
@@ -35,3 +35,14 @@ def gordos(dir,size):
 def visualizar(fichero):
 	documento = open(fichero)
 	print documento.read()
+
+def cp(f1,f2):
+	entrada = open(f1,'r+')
+	salida = open(f2, 'a')
+	while True:
+		linea = entrada.readline()
+		if not linea: break
+		salida.write(linea)
+	entrada.close()
+	salida.close()
+	return salida
